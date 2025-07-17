@@ -1,25 +1,25 @@
-// components/common/Button.tsx
-import React from 'react';
+import Link from 'next/link'; 
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'danger';
+const Header: React.FC = () => {
+  return (
+    <header className="bg-blue-600 text-white shadow-md py-4">
+      <div className="container mx-auto flex justify-between items-center px-4">
+        <h3 className="font-bold text-2xl">
+     <Link href="/">Daily Contents</Link>
+  </h3>
+        <nav>
+          <ul className="flex space-x-6">
+            <li className="hover:underline">
+              <Link href="/posts">Posts</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
 }
 
-const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', className, ...props }) => {
-  const baseStyles = 'px-4 py-2 rounded-md font-semibold transition duration-200 ease-in-out';
-
-  const variantStyles = {
-    primary: 'bg-blue-500 text-white hover:bg-blue-600',
-    secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300',
-    danger: 'bg-red-500 text-white hover:bg-red-600',
-  };
-
-  return (
-    <button className={`${baseStyles} ${variantStyles[variant]} ${className || ''}`} {...props}>
-      {children}
-    </button>
-  );
-};
-
-export default Button;
+export default Header;
