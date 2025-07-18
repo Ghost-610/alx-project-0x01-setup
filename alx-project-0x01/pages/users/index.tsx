@@ -54,15 +54,50 @@
 
 // pages/users/index.tsx
 
+// import React from 'react';
+// import UserCard from '@/components/common/UserCard';
+// import { UserProps } from '@/interfaces';
+
+// interface UsersPageProps {
+//   posts: UserProps[]; // 'posts' is the key returned from getStaticProps
+// }
+
+// const UsersPage: React.FC<UsersPageProps> = ({ posts }) => {
+//   return (
+//     <div className="px-4">
+//       <h1 className="text-3xl font-bold text-center mt-6">Users</h1>
+//       {posts.map((user) => (
+//         <UserCard key={user.id} {...user} />
+//       ))}
+//     </div>
+//   );
+// };
+
+// export async function getStaticProps() {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const posts = await response.json();
+
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }
+
+// export default UsersPage;
+
+
+//3 
+
 import React from 'react';
 import UserCard from '@/components/common/UserCard';
 import { UserProps } from '@/interfaces';
 
-interface UsersPageProps {
-  posts: UserProps[]; // 'posts' is the key returned from getStaticProps
+interface UsersProps {
+  posts: UserProps[];
 }
 
-const UsersPage: React.FC<UsersPageProps> = ({ posts }) => {
+const Users: React.FC<UsersProps> = ({ posts }) => {
   return (
     <div className="px-4">
       <h1 className="text-3xl font-bold text-center mt-6">Users</h1>
@@ -84,4 +119,4 @@ export async function getStaticProps() {
   };
 }
 
-export default UsersPage;
+export default Users;
