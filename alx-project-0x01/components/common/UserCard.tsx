@@ -1,4 +1,5 @@
-import { PostProps } from "@/interfaces";
+import React from 'react';
+import { UserCardProps } from "@/interfaces";
 
 const PostCard: React.FC<PostProps> = ({ title, body, userId, id }) => {
     return (
@@ -14,3 +15,4 @@ const PostCard: React.FC<PostProps> = ({ title, body, userId, id }) => {
         </div>
     );
 }
+export default PostCard;
